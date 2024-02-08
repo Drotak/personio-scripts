@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Personio
 // @namespace    http://tampermonkey.net/
-// @version      2024-02-06
+// @version      2024-02-08_1
 // @description  Always select the default department
 // @author       Michael Klotzner
 // @match        https://*.personio.de/*
