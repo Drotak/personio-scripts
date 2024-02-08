@@ -110,15 +110,18 @@
                 if(node["nodeName"] === "DIV" && node.dataset["testId"] === "day-entry-field-projects-list")
                 {
                     selected_departments = Cookies.get("cookie_departments") ?? [];
-                    $(node).children('ul').children('li').each(function () {
-                        let node_dep = departments.filter(obj => {
-                            return obj.attributes.name === this.title
-                        })[0];
-                        if(!selected_departments.includes(node_dep.id))
-                        {
-                            $(this).remove();
-                        }
-                    });
+                    if(selected_departments.length)
+                    {
+                        $(node).children('ul').children('li').each(function () {
+                            let node_dep = departments.filter(obj => {
+                                return obj.attributes.name === this.title
+                            })[0];
+                            if(!selected_departments.includes(node_dep.id))
+                            {
+                                $(this).remove();
+                            }
+                        });
+                    }
                 }
 
                 // select default department
